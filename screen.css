@@ -1,0 +1,9 @@
+#main {
+  width: 960px;
+  margin: 0 auto;
+  font-family: helvetica, arial, freesans, clean, sans-serif;
+}
+h1 {
+  font-family: "Gill Sans";
+  font-weight: lighter;
+}
