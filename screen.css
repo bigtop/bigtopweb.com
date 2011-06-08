@@ -1,39 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-}
-body {
-  color: white;
-  background-color: #666;
-}
-.content {
-  width: 960px;
-  margin: 0 auto;
+  color: black;
+  background-color: white;
   font-family: helvetica, arial, freesans, clean, sans-serif;
 }
 h1, h2 {
   font-family: "Gill Sans";
   font-weight: lighter;
 }
-#header {
-  margin: 0;
-  padding: 10px 0;
-  background-color: black;
-}
-#header h2 {
-  margin: 0;
-}
-#main {
-  color: black;
-  background-color: white;
-  padding: 20px 0;
-}
-#main h2 {
-  color: #666;
-}
-#main p {
-  line-height: 1.3em;
-}
-#footer {
-  padding: 20px 0;
+.content {
+  width: 960px;
+  margin: 0 auto;
 }
