@@ -5,7 +5,7 @@ layout: default
 What is Bigtop?
 ---------------
 
-Bigtop is a collection of libraries that extend the excellent [Lift] web framework.
+It's a collection of libraries that extend the excellent [Lift] web framework.
 
 [Lift]: http://liftweb.net
 
@@ -28,11 +28,20 @@ You currently have two options:
        sbt update
        sbt publish-local
 
- - Grab the artefacts directly from our Maven repository:
+ - Grab the artefacts directly from our [Maven] repository:
  
    - Server: `repo.untyped.com`
    - Group: `bigtop`
-   - Artefact: `bigtop-foo_2.8.1`
-   - Version: `0.1-SNAPSHOT`
+   - Artefact: `bigtop-«LIBRARY-NAME»_«SCALA-VERSION»`
+   - Version: `«BIGTOP-VERSION»`
 
-   where `foo` is the name of the Bigtop library you need (e.g. `util` or `debug`).
+where:
+
+ - `«LIBRARY-NAME»` is the name of the Bigtop library you need (e.g. `util` or `debug`);
+ - `«SCALA_VERSION»` is the Scala language version (e.g. `2.8.1` or `2.9.0-1`);
+ - `«BIGTOP-VERSION»` is the version of Bigtop (e.g. `0.1` or `0.2`).
+
+Browse the [Maven] repository to find the latest versions and the applicable versions of Scala.
+
+[Github]: https://github.com/bigtop/bigtop
+[Maven]: http://repo.untyped.com/bigtop

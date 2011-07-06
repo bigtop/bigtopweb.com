@@ -1,0 +1,140 @@
+@page-width: 780px;
+@nav-width: 180px;
+
+@border-color: #eee;
+@bigtop-color1: #ffba71;
+@bigtop-color2: #fc4b00;
+@bigtop-color3: #73c076;
+@bigtop-color4: #06add3;
+@bigtop-color5: #c7f208;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+}
+
+body {
+  color: black;
+  font-family: helvetica, arial, freesans, clean, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+h1, h2 {
+  margin: 30px 0 10px -15px;
+  padding: 0 0 0 10px;
+  font-family: "Gill Sans";
+  font-weight: lighter;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+
+h1 { border-left: 5px solid @bigtop-color1; }
+h1:nth-of-type(5n+1) { border-left: 5px solid @bigtop-color1; }
+h1:nth-of-type(5n+2) { border-left: 5px solid @bigtop-color2; }
+h1:nth-of-type(5n+3) { border-left: 5px solid @bigtop-color3; }
+h1:nth-of-type(5n+4) { border-left: 5px solid @bigtop-color4; }
+h1:nth-of-type(5n+5) { border-left: 5px solid @bigtop-color5; }
+h2 { border-left: 5px solid @bigtop-color1; }
+h2:nth-of-type(5n+1) { border-left: 5px solid @bigtop-color2; }
+h2:nth-of-type(5n+2) { border-left: 5px solid @bigtop-color3; }
+h2:nth-of-type(5n+3) { border-left: 5px solid @bigtop-color4; }
+h2:nth-of-type(5n+4) { border-left: 5px solid @bigtop-color5; }
+h2:nth-of-type(5n+5) { border-left: 5px solid @bigtop-color1; }
+
+h1 {
+  font-size: 36px;
+  line-height: 40px;
+  text-transform: uppercase;
+  
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+a {
+  color: #00f;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.1);
+}
+
+#container {
+  position: relative;
+  width: @page-width;
+  margin: 0 auto;
+  padding: 0 10px;
+  border-left: 5px solid @border-color;
+  border-right: 5px solid @border-color;
+  border-bottom: 5px solid @border-color;
+  background: white url(images/bigtop-logo.png) no-repeat right top;
+}
+
+header, article, footer, nav {
+  display: block; // for IE's benefit
+}
+
+header, article {
+  width: @page-width - @nav-width;
+  margin: 0 @nav-width 0 0;
+}
+
+header {
+  padding: 30px 0 0;
+}
+
+footer {
+  width: @page-width - 40px;
+  margin: 20px auto;
+  padding: 20px 0;
+  text-align: center;
+  color: #aaa;
+  
+  a {
+    color: #99c;
+  }
+}
+
+nav {
+  position: absolute;
+  top: 200px;
+  right: -5px;
+  width: @nav-width;
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  a {
+    display: block;
+    padding: 0 20px;
+    text-align: right;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
+    color: #000;
+  }
+
+  li a { border-right: 5px solid @bigtop-color1; }
+  li:nth-child(1n) a { border-right: 5px solid @bigtop-color1; }
+  li:nth-child(2n) a { border-right: 5px solid @bigtop-color2; }
+  li:nth-child(3n) a { border-right: 5px solid @bigtop-color3; }
+  li:nth-child(4n) a { border-right: 5px solid @bigtop-color4; }
+  li:nth-child(5n) a { border-right: 5px solid @bigtop-color5; }
+
+  li a:hover { background: @bigtop-color1; }
+  li:nth-child(1n) { a.highlight, a:hover { background: lighten(@bigtop-color1, 10%); } }
+  li:nth-child(2n) { a.highlight, a:hover { background: lighten(@bigtop-color2, 20%); } }
+  li:nth-child(3n) { a.highlight, a:hover { background: lighten(@bigtop-color3, 20%); } }
+  li:nth-child(4n) { a.highlight, a:hover { background: lighten(@bigtop-color4, 25%); } }
+  li:nth-child(5n) { a.highlight, a:hover { background: lighten(@bigtop-color5, 10%); } }
+}
