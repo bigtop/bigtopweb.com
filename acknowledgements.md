@@ -10,7 +10,7 @@ Bigtop is maintained by Dave Gurnell and Noel Welsh of [Untyped].
 The Bigtop codebase is Copyright 2011 Untyped Ltd, released under the [Apache 2.0] license. 
 
 ‘Thank you’s
------------
+------------
 
 We would like to thank David Brooks and the [Racket] dev team for their direct and indirect contributions.
 
