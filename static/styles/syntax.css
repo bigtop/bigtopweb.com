@@ -1,0 +1,25 @@
+.highlight {
+  padding: .5em 0;
+  background: #222;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+}
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sx,
+.highlight .mi {
+  color: #8aff53;
+}
+.highlight .k,
+.highlight .kp,
+.highlight .c,
+.highlight .c1 {
+  color: #3ca0ff;
+}
+.highlight .o {
+  color: #ff9235;
+}

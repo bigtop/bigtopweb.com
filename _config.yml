@@ -2,7 +2,6 @@ safe:        false
 auto:        true
 server:      true
 server_port: 4000
-baseurl:     /
 
 source:      .
 destination: ./_site

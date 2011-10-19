@@ -1,47 +1,53 @@
 ---
 layout: default
+title: Bigtop
 ---
 
-What is Bigtop?
----------------
+What's is Bigtop?
+-----------------
 
-It's a collection of libraries that extend the excellent [Lift] web framework.
-
-[Lift]: http://liftweb.net
-
-The goals of Bigtop are to provide comprehensive and flexible libraries to automate common tasks, and to make it even easier to develop highly interactive web sites using Lift. There is a strong focus on documentation and providing a consistent architecture.
+Bigtop is a collection of web development libraries for Scala programmers. It is intended to complement web frameworks like [Lift] and [Scalatra].
 
 Development Status
 ------------------
 
-Bigtop is currently in extremely early alpha. There's lots of code and documentation that isn't in place yet. Please bear with us as we get ourselves up and running.
+Bigtop is currently in extremely early alpha. There are two semi-stable libraries, plus a number you probably shouldn't dabble with yet.
+
+The stable libraries are:
+
+ - [Bigtop Core](/core) - utilities for generating and manipulating URLs and hyperlinks;
+ - [Bigtop Routes](/routes) - bidirectional type-safe mappings between RESTful URLs and Scala code.
+
+We encourage and appreciate any feedback - if you have any suggestions or comments, please get in touch via our [Github] page.
 
 Getting Bigtop
 --------------
 
 You currently have two options:
 
+ - Grab the artefacts directly from our [Maven] repository. In SBT 0.11:
+ 
+{% highlight scala %}
+resolvers += "Untyped" at "http://repo.untyped.com"
+
+libraryDependencies ++= Seq(
+ "bigtop" %% "bigtop-core"   % "0.2-SNAPSHOT",
+ "bigtop" %% "bigtop-routes" % "0.2-SNAPSHOT"
+)
+{% endhighlight %}
+
  - Grab the source code from our [Github] repo and build it using SBT:
- 
-       git clone git://github.com/bigtop/bigtop.git bigtop
-       cd bigtop
-       sbt update
-       sbt publish-local
 
- - Grab the artefacts directly from our [Maven] repository:
- 
-   - Server: `repo.untyped.com`
-   - Group: `bigtop`
-   - Artefact: `bigtop-«LIBRARY-NAME»_«SCALA-VERSION»`
-   - Version: `«BIGTOP-VERSION»`
-
-where:
-
- - `«LIBRARY-NAME»` is the name of the Bigtop library you need (e.g. `util` or `debug`);
- - `«SCALA_VERSION»` is the Scala language version (e.g. `2.8.1` or `2.9.0-1`);
- - `«BIGTOP-VERSION»` is the version of Bigtop (e.g. `0.1` or `0.2`).
+{% highlight bash %}
+git clone git://github.com/bigtop/bigtop.git bigtop
+cd bigtop
+sbt update
+sbt publish-local
+{% endhighlight %}
 
 Browse the [Maven] repository to find the latest versions and the applicable versions of Scala.
 
+[Lift]: http://liftweb.net
+[Scalatra]: https://github.com/scalatra/scalatra
 [Github]: https://github.com/bigtop/bigtop
 [Maven]: http://repo.untyped.com/bigtop

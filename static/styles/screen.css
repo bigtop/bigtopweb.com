@@ -1,3 +1,28 @@
+.highlight {
+  padding: .5em 0;
+  background: #222;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+}
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sx,
+.highlight .mi {
+  color: #8aff53;
+}
+.highlight .k, .highlight .kp {
+  color: #3ca0ff;
+}
+.highlight .o {
+  color: #ff9235;
+}
+.highlight .c, .highlight .c1 {
+  color: #c0c0c0;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -20,37 +45,37 @@ h1 {
   border-left: 5px solid #ffba71;
 }
 h1:nth-of-type(5n+1) {
-  border-left: 5px solid #ffba71;
+  border-left: 5px solid #c7f208;
 }
 h1:nth-of-type(5n+2) {
-  border-left: 5px solid #fc4b00;
+  border-left: 5px solid #ffba71;
 }
 h1:nth-of-type(5n+3) {
-  border-left: 5px solid #73c076;
+  border-left: 5px solid #fc4b00;
 }
 h1:nth-of-type(5n+4) {
-  border-left: 5px solid #06add3;
+  border-left: 5px solid #73c076;
 }
 h1:nth-of-type(5n+5) {
-  border-left: 5px solid #c7f208;
+  border-left: 5px solid #06add3;
 }
 h2 {
   border-left: 5px solid #ffba71;
 }
 h2:nth-of-type(5n+1) {
-  border-left: 5px solid #fc4b00;
+  border-left: 5px solid #ffba71;
 }
 h2:nth-of-type(5n+2) {
-  border-left: 5px solid #73c076;
+  border-left: 5px solid #fc4b00;
 }
 h2:nth-of-type(5n+3) {
-  border-left: 5px solid #06add3;
+  border-left: 5px solid #73c076;
 }
 h2:nth-of-type(5n+4) {
-  border-left: 5px solid #c7f208;
+  border-left: 5px solid #06add3;
 }
 h2:nth-of-type(5n+5) {
-  border-left: 5px solid #ffba71;
+  border-left: 5px solid #c7f208;
 }
 h1 {
   font-size: 36px;
@@ -65,12 +90,20 @@ h2 {
   font-size: 24px;
   line-height: 40px;
 }
+h3 {
+  line-height: 20px;
+  margin: 30px 0 10px;
+}
 p {
   margin: 0 0 20px;
 }
 a {
   color: #00f;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+.highlight {
+  margin: 0 20px 20px 20px;
+  padding: 5px 20px;
 }
 #container {
   position: relative;
@@ -80,7 +113,6 @@ a {
   border-left: 5px solid #eeeeee;
   border-right: 5px solid #eeeeee;
   border-bottom: 5px solid #eeeeee;
-  background: white url(images/bigtop-logo.png) no-repeat right top;
 }
 header,
 article,
@@ -106,23 +138,58 @@ footer a {
   color: #99c;
 }
 nav {
-  position: absolute;
-  top: 200px;
-  right: -5px;
+  position: fixed;
+  top: 0;
+  left: auto;
+  right: auto;
   width: 180px;
+  margin: 0;
+  margin-left: 615px;
+  padding: 180px 0 0 0;
+  background: transparent url(images/bigtop-logo.png) no-repeat right top;
 }
 nav ul {
-  margin: 0;
+  margin: 0 0 40px;
   padding: 0;
   list-style-type: none;
 }
 nav a {
   display: block;
-  padding: 0 20px;
+  padding: 0 10px;
   text-align: right;
   text-decoration: none;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
   color: #000;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+nav .nav1 {
+  border-right: 5px solid #ffba71;
+}
+nav .nav1.highlight, nav .nav1:hover {
+  background: #ffd3a4;
+}
+nav .nav2 {
+  border-right: 5px solid #fc4b00;
+}
+nav .nav2.highlight, nav .nav2:hover {
+  background: #ff9163;
+}
+nav .nav3 {
+  border-right: 5px solid #73c076;
+}
+nav .nav3.highlight, nav .nav3:hover {
+  background: #b9e0bb;
+}
+nav .nav4 {
+  border-right: 5px solid #06add3;
+}
+nav .nav4.highlight, nav .nav4:hover {
+  background: #5eddfa;
+}
+nav .nav5 {
+  border-right: 5px solid #c7f208;
+}
+nav .nav5.highlight, nav .nav5:hover {
+  background: #d4f835;
 }
 nav li a {
   border-right: 5px solid #ffba71;
@@ -130,33 +197,33 @@ nav li a {
 nav li:nth-child(1n) a {
   border-right: 5px solid #ffba71;
 }
-nav li:nth-child(2n) a {
-  border-right: 5px solid #fc4b00;
-}
-nav li:nth-child(3n) a {
-  border-right: 5px solid #73c076;
-}
-nav li:nth-child(4n) a {
-  border-right: 5px solid #06add3;
-}
-nav li:nth-child(5n) a {
-  border-right: 5px solid #c7f208;
-}
-nav li a:hover {
-  background: #ffba71;
-}
 nav li:nth-child(1n) a.highlight, nav li:nth-child(1n) a:hover {
   background: #ffd3a4;
+}
+nav li:nth-child(2n) a {
+  border-right: 5px solid #fc4b00;
 }
 nav li:nth-child(2n) a.highlight, nav li:nth-child(2n) a:hover {
   background: #ff9163;
 }
+nav li:nth-child(3n) a {
+  border-right: 5px solid #73c076;
+}
 nav li:nth-child(3n) a.highlight, nav li:nth-child(3n) a:hover {
   background: #b9e0bb;
+}
+nav li:nth-child(4n) a {
+  border-right: 5px solid #06add3;
 }
 nav li:nth-child(4n) a.highlight, nav li:nth-child(4n) a:hover {
   background: #5eddfa;
 }
+nav li:nth-child(5n) a {
+  border-right: 5px solid #c7f208;
+}
 nav li:nth-child(5n) a.highlight, nav li:nth-child(5n) a:hover {
   background: #d4f835;
+}
+nav li a:hover {
+  background: #ffba71;
 }

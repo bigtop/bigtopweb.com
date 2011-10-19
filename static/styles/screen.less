@@ -1,3 +1,5 @@
+@import 'syntax.less';
+
 @page-width: 780px;
 @nav-width: 180px;
 
@@ -30,17 +32,17 @@ h1, h2 {
 }
 
 h1 { border-left: 5px solid @bigtop-color1; }
-h1:nth-of-type(5n+1) { border-left: 5px solid @bigtop-color1; }
-h1:nth-of-type(5n+2) { border-left: 5px solid @bigtop-color2; }
-h1:nth-of-type(5n+3) { border-left: 5px solid @bigtop-color3; }
-h1:nth-of-type(5n+4) { border-left: 5px solid @bigtop-color4; }
-h1:nth-of-type(5n+5) { border-left: 5px solid @bigtop-color5; }
+h1:nth-of-type(5n+1) { border-left: 5px solid @bigtop-color5; }
+h1:nth-of-type(5n+2) { border-left: 5px solid @bigtop-color1; }
+h1:nth-of-type(5n+3) { border-left: 5px solid @bigtop-color2; }
+h1:nth-of-type(5n+4) { border-left: 5px solid @bigtop-color3; }
+h1:nth-of-type(5n+5) { border-left: 5px solid @bigtop-color4; }
 h2 { border-left: 5px solid @bigtop-color1; }
-h2:nth-of-type(5n+1) { border-left: 5px solid @bigtop-color2; }
-h2:nth-of-type(5n+2) { border-left: 5px solid @bigtop-color3; }
-h2:nth-of-type(5n+3) { border-left: 5px solid @bigtop-color4; }
-h2:nth-of-type(5n+4) { border-left: 5px solid @bigtop-color5; }
-h2:nth-of-type(5n+5) { border-left: 5px solid @bigtop-color1; }
+h2:nth-of-type(5n+1) { border-left: 5px solid @bigtop-color1; }
+h2:nth-of-type(5n+2) { border-left: 5px solid @bigtop-color2; }
+h2:nth-of-type(5n+3) { border-left: 5px solid @bigtop-color3; }
+h2:nth-of-type(5n+4) { border-left: 5px solid @bigtop-color4; }
+h2:nth-of-type(5n+5) { border-left: 5px solid @bigtop-color5; }
 
 h1 {
   font-size: 36px;
@@ -58,6 +60,11 @@ h2 {
   line-height: 40px;
 }
 
+h3 {
+  line-height: 20px;
+  margin: 30px 0 10px;
+}
+
 p {
   margin: 0 0 20px;
 }
@@ -65,6 +72,11 @@ p {
 a {
   color: #00f;
   text-shadow: 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.highlight { // syntax highlighting
+  margin: 0 20px 20px 20px;
+  padding: 5px 20px;
 }
 
 #container {
@@ -75,7 +87,6 @@ a {
   border-left: 5px solid @border-color;
   border-right: 5px solid @border-color;
   border-bottom: 5px solid @border-color;
-  background: white url(images/bigtop-logo.png) no-repeat right top;
 }
 
 header, article, footer, nav {
@@ -104,37 +115,43 @@ footer {
 }
 
 nav {
-  position: absolute;
-  top: 200px;
-  right: -5px;
+  position: fixed;
+  top: 0;
+  left: auto;
+  right: auto;
   width: @nav-width;
+  margin: 0;
+  margin-left: @page-width - @nav-width + 15px;
+  padding: 180px 0 0 0;
+  background: transparent url(images/bigtop-logo.png) no-repeat right top;
   
   ul {
-    margin: 0;
+    margin: 0 0 40px;
     padding: 0;
     list-style-type: none;
   }
   
   a {
     display: block;
-    padding: 0 20px;
+    padding: 0 10px;
     text-align: right;
     text-decoration: none;
-    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
     color: #000;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.2);
   }
-
+  
+  .nav1 { border-right: 5px solid @bigtop-color1; &.highlight, &:hover { background: lighten(@bigtop-color1, 10%); } }
+  .nav2 { border-right: 5px solid @bigtop-color2; &.highlight, &:hover { background: lighten(@bigtop-color2, 20%); } }
+  .nav3 { border-right: 5px solid @bigtop-color3; &.highlight, &:hover { background: lighten(@bigtop-color3, 20%); } }
+  .nav4 { border-right: 5px solid @bigtop-color4; &.highlight, &:hover { background: lighten(@bigtop-color4, 25%); } }
+  .nav5 { border-right: 5px solid @bigtop-color5; &.highlight, &:hover { background: lighten(@bigtop-color5, 10%); } }
+  
   li a { border-right: 5px solid @bigtop-color1; }
-  li:nth-child(1n) a { border-right: 5px solid @bigtop-color1; }
-  li:nth-child(2n) a { border-right: 5px solid @bigtop-color2; }
-  li:nth-child(3n) a { border-right: 5px solid @bigtop-color3; }
-  li:nth-child(4n) a { border-right: 5px solid @bigtop-color4; }
-  li:nth-child(5n) a { border-right: 5px solid @bigtop-color5; }
+  li:nth-child(1n) a { .nav1 }
+  li:nth-child(2n) a { .nav2 }
+  li:nth-child(3n) a { .nav3 }
+  li:nth-child(4n) a { .nav4 }
+  li:nth-child(5n) a { .nav5 }
 
   li a:hover { background: @bigtop-color1; }
-  li:nth-child(1n) { a.highlight, a:hover { background: lighten(@bigtop-color1, 10%); } }
-  li:nth-child(2n) { a.highlight, a:hover { background: lighten(@bigtop-color2, 20%); } }
-  li:nth-child(3n) { a.highlight, a:hover { background: lighten(@bigtop-color3, 20%); } }
-  li:nth-child(4n) { a.highlight, a:hover { background: lighten(@bigtop-color4, 25%); } }
-  li:nth-child(5n) { a.highlight, a:hover { background: lighten(@bigtop-color5, 10%); } }
 }
