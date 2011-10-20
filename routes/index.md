@@ -186,3 +186,100 @@ class MyServlet extends HttpServlet {
 [bigtop scalatra sample]: https://github.com/bigtop/scalatra-example
 [lift rest]: http://simply.liftweb.net/index-Chapter-5.html
 
+Custom URL args
+---------------
+
+Routes ships with the ability to extract the following data types from a URL:
+
+ - `Ints`    via `bigtop.routes.core.IntArg`
+ - `Doubles` via `bigtop.routes.core.DoubleArg`
+ - `Strings` via `bigtop.routes.core.StringArg`
+
+However, these data types may not be enough for your needs. You can extract your own data types by creating your own custom subclass of `bigtop.routes.core.Arg[T]`. For example:
+
+{% highlight scala %}
+import bigtop.routes.lift._
+
+object BooleanArg extends Arg[Boolean] {
+  
+  def decode(in: String): Option[Boolean] =
+    in.toLowerCase match {
+      case "yes"   => Some(true)
+      case "true"  => Some(true)
+      case "no"    => Some(false)
+      case "false" => Some(false)
+      case _       => None
+    }
+  
+  def encode(in: Boolean): String =
+    if(in) "yes" else "no"
+  
+}
+
+// Use this in your URL patterns as follows:
+("insert" :/: "boolean :/: "here" :/: BooleanArg :/: end)
+{% endhighlight %}
+
+You may wish to write a custom `Arg` that does some expensive computation in its `decode()` method. A common example would be parsing a primary key value from the URL and loading the corresponding record from the database.
+
+If so, it is a good idea to override the `Arg.canDecode()` method to provide a rough-and-ready guard that skips the expensive part of the computation. Doing so can provide a speed boost when pattern matching on URLs:
+
+{% highlight scala %}
+import bigtop.routes.lift._
+
+class DatabaseArg[T](
+  loadRecord: (Int) => Option[T],
+  getPrimaryKey: (T) => Int
+) extends Arg[T] {
+  
+  // See if "in" is an integer (quick check):
+  override def canDecode(in: String): Boolean =
+    try {
+      in.toInt
+      true
+    } catch {
+      case _: NumberFormatException => false
+    }
+  
+  // Load a record from the database (expensive):
+  def decode(in: String): Option[T] =
+    try {
+      loadRecord(in.toInt)
+    } catch {
+      case _: NumberFormatException => None
+    }
+  
+  // Serialize the primary key as a string:
+  def encode(in: T): String =
+    getPrimaryKey(in).toString
+  
+}
+{% endhighlight %}
+
+Rest-arguments
+--------------
+
+URL patterns are typically terminated with the keyword `end`, signifying that the URL must end right there. For example, the route:
+
+{% highlight scala %}
+("add" :/: IntArg :/: "to" :/: IntArg :/: end) >> {
+  (a: Int, b: Int) =>
+    <html><body>{ a } + { b } = { a + b }</body></html>
+}
+{% endhighlight %}
+
+would match on the URL `"/add/1/to/2"` but not on the URL `"/add/1/to/2/now"`.
+
+You can match on a URL of any length by substituting the `end` keyword for `any`. The tail of the URL is passed to your route function as an extra argument of type `List[String]`. For example, the route:
+
+{% highlight scala %}
+("append" :/: any) >> {
+  (strings: List[String]) =>
+    <html><body>
+      append{ strings.mkString("(", ",", ")" } = 
+      { strings.mkString }
+    </body></html>
+}
+{% endhighlight %}
+
+would match on any URL starting with `"/append/"`: `"/append/a"`, `"/append/a/b"`, and so on.
