@@ -186,8 +186,8 @@ class MyServlet extends HttpServlet {
 [bigtop scalatra sample]: https://github.com/bigtop/scalatra-example
 [lift rest]: http://simply.liftweb.net/index-Chapter-5.html
 
-Custom URL args
----------------
+Custom Args
+-----------
 
 Routes ships with the ability to extract the following data types from a URL:
 
