@@ -85,8 +85,8 @@ libraryDependencies ++= Seq(
 {% endhighlight %}
 
 
-Routes in in Lift
------------------
+Routes in Lift
+--------------
 
 A [sample Lift project][bigtop lift sample] is available from the Bigtop Github page.
 
@@ -127,7 +127,7 @@ A [sample Scalatra project][bigtop scalatra sample] is available from the Bigtop
 
 Once your project dependencies are set, the `bigtop.routes.scalatra` package will give you all the code you need to start using Routes.
 
-Now define your site as in the example at the top of this page. `Routes` in your `Site` can return any response value that Scalatra understands. You can access code Scalatra dispatch functionality in your servlet from your routes via the `kernel` method on `Site`. For example, you can use `kernel.pass` to skip to the next `get()` or `post()` statement in your servlet:
+Now define your site as in the example at the top of this page. `Routes` in your `Site` can return any response value that Scalatra understands. You can access `ScalatraServlet` functionality via the `kernel` method on the `Site` object. For example, you can use `kernel.pass` to skip to the next `get()` or `post()` statement in your servlet:
 
 {% highlight scala %}
 ("add" :/: IntArg :/: "to" :/: IntArg :/: end) >> {

@@ -53,6 +53,6 @@ Url("/demos").link(<span><em>awesome</em> demoreel</span>)
 // ==> <a href="/demos"><span><em>awesome</em> demoreel</span></a>
 {% endhighlight %}
 
-Agaib, see the [API reference] for a complete guide.
+Again, see the [API reference] for a complete guide.
 
 [API reference]: http://api.bigtopweb.com
