@@ -16,7 +16,7 @@ Bigtop is currently in extremely early alpha. There are two semi-stable librarie
 The stable libraries are:
 
  - [Bigtop Core](/core) - utilities for generating and manipulating URLs and hyperlinks;
- - [Bigtop Routes](/routes) - bidirectional type-safe mappings between RESTful URLs and Scala code.
+ - [Bigtop Routes](/routes) - bidirectional type-safe mappings between URL paths and Scala code.
 
 We encourage and appreciate any feedback - if you have any suggestions or comments, please get in touch via our [Github] page.
 
