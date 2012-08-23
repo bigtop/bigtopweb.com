@@ -14,16 +14,19 @@
 .highlight .mi {
   color: #8aff53;
 }
-.highlight .k, .highlight .kp {
+.highlight .k,
+.highlight .kp {
   color: #3ca0ff;
 }
 .highlight .o {
   color: #ff9235;
 }
-.highlight .c, .highlight .c1 {
+.highlight .c,
+.highlight .c1 {
   color: #c0c0c0;
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   background: #f7f7f7;
@@ -34,7 +37,8 @@ body {
   font-size: 13px;
   line-height: 20px;
 }
-h1, h2 {
+h1,
+h2 {
   margin: 30px 0 10px -15px;
   padding: 0 0 0 10px;
   font-family: "Gill Sans";
@@ -108,6 +112,7 @@ a {
 #container {
   position: relative;
   width: 780px;
+  min-height: 30em;
   margin: 0 auto;
   padding: 0 10px;
   border-left: 5px solid #eeeeee;
@@ -120,7 +125,8 @@ footer,
 nav {
   display: block;
 }
-header, article {
+header,
+article {
   width: 600px;
   margin: 0 180px 0 0;
 }
@@ -164,31 +170,36 @@ nav a {
 nav .nav1 {
   border-right: 5px solid #ffba71;
 }
-nav .nav1.highlight, nav .nav1:hover {
+nav .nav1.highlight,
+nav .nav1:hover {
   background: #ffd3a4;
 }
 nav .nav2 {
   border-right: 5px solid #fc4b00;
 }
-nav .nav2.highlight, nav .nav2:hover {
+nav .nav2.highlight,
+nav .nav2:hover {
   background: #ff9163;
 }
 nav .nav3 {
   border-right: 5px solid #73c076;
 }
-nav .nav3.highlight, nav .nav3:hover {
+nav .nav3.highlight,
+nav .nav3:hover {
   background: #b9e0bb;
 }
 nav .nav4 {
   border-right: 5px solid #06add3;
 }
-nav .nav4.highlight, nav .nav4:hover {
+nav .nav4.highlight,
+nav .nav4:hover {
   background: #5eddfa;
 }
 nav .nav5 {
   border-right: 5px solid #c7f208;
 }
-nav .nav5.highlight, nav .nav5:hover {
+nav .nav5.highlight,
+nav .nav5:hover {
   background: #d4f835;
 }
 nav li a {
@@ -197,31 +208,36 @@ nav li a {
 nav li:nth-child(1n) a {
   border-right: 5px solid #ffba71;
 }
-nav li:nth-child(1n) a.highlight, nav li:nth-child(1n) a:hover {
+nav li:nth-child(1n) a.highlight,
+nav li:nth-child(1n) a:hover {
   background: #ffd3a4;
 }
 nav li:nth-child(2n) a {
   border-right: 5px solid #fc4b00;
 }
-nav li:nth-child(2n) a.highlight, nav li:nth-child(2n) a:hover {
+nav li:nth-child(2n) a.highlight,
+nav li:nth-child(2n) a:hover {
   background: #ff9163;
 }
 nav li:nth-child(3n) a {
   border-right: 5px solid #73c076;
 }
-nav li:nth-child(3n) a.highlight, nav li:nth-child(3n) a:hover {
+nav li:nth-child(3n) a.highlight,
+nav li:nth-child(3n) a:hover {
   background: #b9e0bb;
 }
 nav li:nth-child(4n) a {
   border-right: 5px solid #06add3;
 }
-nav li:nth-child(4n) a.highlight, nav li:nth-child(4n) a:hover {
+nav li:nth-child(4n) a.highlight,
+nav li:nth-child(4n) a:hover {
   background: #5eddfa;
 }
 nav li:nth-child(5n) a {
   border-right: 5px solid #c7f208;
 }
-nav li:nth-child(5n) a.highlight, nav li:nth-child(5n) a:hover {
+nav li:nth-child(5n) a.highlight,
+nav li:nth-child(5n) a:hover {
   background: #d4f835;
 }
 nav li a:hover {
